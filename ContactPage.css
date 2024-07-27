@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.contact-container {
+  display: flex;
+  background-color: white;
+  flex-direction:column;
+  align-items: center;
+}
+
+
+/* code for the wavy section */
+.wavy-section {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  background: linear-gradient(to right, #0e8e61, #1c58c1);
+  overflow: hidden; /* Hide overflow to ensure smooth wave effect */
+}
+
+.wavy-section::before {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* Adjust to control how much the wave overlaps */
+  left: 0;
+  width: 100%;
+  height: 140px; /* Adjust the height of the wave */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L30,213.3C60,203,120,181,180,186.7C240,192,300,224,360,224C420,224,480,192,540,165.3C600,139,660,117,720,128C780,139,840,181,900,192C960,203,1020,181,1080,154.7C1140,128,1200,96,1260,85.3C1320,75,1380,85,1410,90.7L1440,96L1440,320L0,320Z"></path></svg>') no-repeat;
+  background-size: cover;
+  z-index: 1; /* Ensure it sits below the contact content */
+}
+
+.wavy-section h2 {
+  padding: 10px;
+  color: white;
+  font-style: oblique;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wavy-section a {
+  color: greenyellow;
+}
+
+.wavy-section p {
+  color: white;
+  font-size: 12px;
+  align-items: center;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* contact form  */
+.contact-content {
+  display: flex;
+  max-width: 800px; /* Adjust max-width for smaller contact form */
+  width: 100%;
+  margin-top: -30px; /* Adjust to make the form overlap the wavy section */
+  gap: 50px; /* Reduced gap for a more compact layout */
+  justify-content: center;
+  position: relative; /* Ensure contact content is on top */
+  z-index: 2; /* Above the wavy-section */
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px; /* Limit width of contact info */
+}
+/* gif image code */
+
+.contact-info .contact-gif {
+  overflow: visible;
+  width: 200px; 
+  height: auto;
+  position: relative;
+  bottom: 30px; /* Reduce bottom space */
+  clip-path: circle(50% at center);
+  left: 0;
+}
+
+
+/* get in touch */
+
+.get-in-touch {
+  margin-top: 0; /* Remove extra margin-top to bring it closer to the GIF */
+  margin-bottom: 20px; /* Adjust margin at the bottom if needed */
+}
+
+.get-in-touch h2 {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.get-in-touch p {
+  display:flex;
+  font-size: 12px;
+}
+
+.get-in-touch svg {
+  margin-right: 10px;
+}
+
+
+/* contact form */
+
+.contact-form {
+  flex: 1;
+  background: rgb(248, 254, 255);
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(18, 76, 3, 0.831);
+  border-radius: 10px;
+  max-width: 300px; /* Adjust for smaller form container */
+  max-height: 360px;
+  margin-top: -100px; /* Adjust to align with the wavy section */
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group label svg {
+  margin-right: 5px; /* Adjust spacing between icon and label text */
+  font-size: 12px; /* Decrease icon size */
+}
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  width: 85%;
+  font-size: 12px;
+  border: 1.5px solid #020202af;
+  border-radius: 5px;
+  border-color: #6a11cb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  background: linear-gradient(to right, #04daed, #ec543c);
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background:rgb(33, 206, 33)
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    align-items: center; /* Center align items */
+    margin-top: -20px; /* Adjust to overlap the wavy section */
+  }
+
+  .contact-info {
+    max-width: 100%; /* Allow contact info to take full width */
+  }
+
+  .contact-form {
+    max-width: 100%;
+    width: 75%; /* Allow contact form to take full width */
+    margin-top: 0; /* Adjust to align with the wavy section */
+  }
+
+  .contact-info .contact-gif {
+    width: 150px; /* Adjust size for smaller screens */
+    bottom: 20px; /* Adjust bottom space */
+  }
+
+  .get-in-touch p {
+    font-size: 12px;
+  }
+
+  .form-group label {
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .contact-container {
+    width: 100%;
+  }
+
+  .wavy-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info .contact-gif {
+    width: 80%; /* Adjust width for smaller screens */
+    bottom: 20px; /* Adjust bottom space for smaller screens */
+  }
+}
